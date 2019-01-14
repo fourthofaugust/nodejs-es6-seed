@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-es6-seed",
+  "version": "0.0.1",
+  "description": "a node js seed repo to build REST APIs",
+  "main": "index.js",
+  "repository": "https://github.com/fourthofaugust/nodejs-es6-seed.git",
+  "author": "Phani Mahesh",
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "atob": "^2.1.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "esm": "^3.0.84",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "mysql": "^2.16.0",
+    "sequelize": "^4.41.0"
+  },
+  "scripts": {
+    "start": "node -r esm src/index.js",
+    "start:local": "node -r esm -r dotenv/config src/index.js",
+    "e2e": "newman -r esm -r dotenv/config src/index.js"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "newman": "^4.2.2"
+  }
+}
