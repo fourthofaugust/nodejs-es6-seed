@@ -19,11 +19,12 @@
   },
   "scripts": {
     "start": "node -r esm src/index.js",
-    "start:local": "node -r esm -r dotenv/config src/index.js",
-    "e2e": "newman -r esm -r dotenv/config src/index.js"
+    "start:local": "nodemon -r esm -r dotenv/config src/index.js",
+    "e2e": "newman functional-test.script.js"
   },
   "devDependencies": {
     "dotenv": "^6.2.0",
-    "newman": "^4.2.2"
+    "newman": "^4.2.2",
+    "nodemon": "^1.18.9"
   }
 }
