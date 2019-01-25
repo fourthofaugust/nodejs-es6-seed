@@ -1,0 +1,84 @@
+swagger: '2.0'
+info:
+  description: "a nodejs es6 seed repository"
+  version: "0.1.0"
+  title: "nodejs-es6-seed"
+host: "localhost:8080"
+basePath: "/v1"
+schemes:
+  - "http"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+paths:
+  "/welcome":
+    get:
+      tags:
+        - "welcome"
+      description: ""
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      operationId: getWelcomeMessage
+      parameters:
+        - name: Authorization
+          in: header
+          description: "A JWT token is required"
+          required: false
+          type: "string"
+        - name: messageId
+          in: query
+          description: "Filter using a messageId"
+          required: false
+          type: "string"
+        - name: offset
+          in: query
+          description: "Enter the desired offset"
+          required: false
+          type: "integer"
+        - name: limit
+          in: query
+          description: "Enter the desired limit"
+          required: false
+          type: integer
+      responses:
+        '200':
+          description: "Successful"
+          schema:
+            $ref: '#/definitions/WelcomeMessage'
+        '400':
+          description: "Bad Request"
+          schema:
+            $ref: '#/definitions/ErrorObject'
+        '500':
+          description: "Server Error"
+          schema:
+            $ref: '#/definitions/ErrorObject'
+      x-swagger-router-controller: "Welcome"
+
+definitions:
+  WelcomeMessage:
+    properties:
+      message:
+        type: "string"
+  ErrorObject:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      errors:
+        type: "array"
+        items:
+          $ref: '#/definitions/ErrorMessage'
+      message:
+        type: "string"
+  ErrorMessage:
+    properties:
+      domain:
+        type: "string"
+      message:
+        type: "string"
+      reason:
+        type: "string"

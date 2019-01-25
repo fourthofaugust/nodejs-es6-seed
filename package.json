@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node -r esm src/index.js",
     "start:local": "nodemon -r esm -r dotenv/config src/index.js",
-    "e2e": "newman functional-test.script.js"
+    "e2e": "newman run functional-tests.script.json -r cli"
   },
   "devDependencies": {
     "dotenv": "^6.2.0",
