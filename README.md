@@ -9,15 +9,19 @@ In terminal navigate to project root directory and run following commands to ins
 
 #### Start Server
 Run `yarn run start` to start the server.  
-Navigate to `http://localhost:8088/v1/<resource>` to access the api locally. 
+Navigate to `http://localhost:8088/v1/welcome` to access the api locally. 
+
+#### Start Development Server
+Run `yarn run start:local` to start the server.  
+Navigate to `http://localhost:8088/v1/welcome` to access the api locally.
 
 #### Tests 
-Run `yarn run test` to execute the functional tests. 
+Run `yarn run e2e` to execute the functional tests. 
 JUnit reports are published to `./functional-tests.xml`
 
 #### Endpoints
-- [Non-Prod](https://yoururl.com/v1/<resource>)
-- [Prod](https://yoururl.com/v1/<resource>)
+- [Non-Prod](https://www.yoururl.com/v1/welcome)
+- [Prod](https://www.yoururl.com/v1/welcome)
 
 #### Developers 
 - [Phani Mahesh](https://github.com/fourthofaugust)
